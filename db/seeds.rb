@@ -5,3 +5,40 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts 'Cleaning database...'
+Flat.destroy_all
+
+puts "Creating flats"
+
+flats = [
+{
+  name: 'Light & Spacious Garden Flat London',
+  address: '10 Clifton Gardens London W9 1DT',
+  description: 'A lovely summer feel for this spacious garden flat. Two double bedrooms, open plan living area, large kitchen and a beautiful conservatory',
+  price_per_night: 75,
+  number_of_guests: 3
+},
+{
+  name: 'Centered house in Geneva',
+  address: 'Grand Rue 10',
+  description: 'Amazing house in the heart of Geneva',
+  price_per_night: 150,
+  number_of_guests: 8
+},
+{
+  name: 'Beach house with feet in ocean',
+  address: 'Miami Beach',
+  description: 'Amazing house with terrace, rooftop and BBQ to enjoy the summer',
+  price_per_night: 100,
+  number_of_guests: 6
+},
+{
+  name: 'Rooftop with view on Eiffel Tower in Paris',
+  address: 'Motte-Piquet',
+  description: 'Spacious flat with view on Paris',
+  price_per_night: 120,
+  number_of_guests: 4
+}
+]
+Flat.create!(flats)
+puts 'Finished!'
